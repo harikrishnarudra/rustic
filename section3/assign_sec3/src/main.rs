@@ -8,10 +8,10 @@ fn main() {
 
 
     println!("--- second question -- ");
-    let x = 5;
-    let y = add_two(x);
+    let mut x = 5;
+    add_two(&mut x);
     println!("x after adding two: {}", x);
-    println!("result of adding with two: {}", y);
+    // println!("result of adding with two: {}", y);
         
 }
 
@@ -23,6 +23,6 @@ fn mutate_vec(v : &mut Vec<i32>) -> bool {
     return false
 }
 
-fn add_two (val: i8) -> i8 {
-    val + 2
+fn add_two (val: &mut i8) {
+    *val += 2;
 }
